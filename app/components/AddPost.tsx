@@ -8,12 +8,14 @@ import toast from "react-hot-toast"
 export default function CreatePost(){
     const [title, setTitle] = useState("")
     const [isDisabled,setIsDisabled] = useState(false)
+    const queryClient = useQueryClient()
     let toastPostID: string
 
     //Create a post using useMutation by invoking it, we need to set up an api to get it from, install axios
     // First parameter is an async function,making call to api
     const {mutate} = useMutation(
-        async (title: string) => await axios.post("/api/posts/addPost", {title}), // api/posts/addpost is directory in Next
+        async (title: string) => await axios.post("/api/posts/addPost", {title}),
+         // api/posts/addpost is directory in Next
         //man here is a data object, basically the key name
         {
             onError: (error) => {
@@ -23,6 +25,7 @@ export default function CreatePost(){
         },
          onSuccess: (data) => {
             toast.success("Post has been made",{id: toastPostID})
+            queryClient.invalidateQueries(['posts']) //posts here is the query keys, we made, so that it refreshes the page and cached it
             setTitle('') //reset title and button disabled to false
             setIsDisabled(false)
          }

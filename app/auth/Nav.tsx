@@ -11,7 +11,7 @@ export default async function Nav(){
     return (
     <nav className='flex justify-between items-center py-8'>
         <Link href={'/'}>
-        <h2 className = 'font-bold text-lg'>send it</h2>
+        <h2 className = 'font-bold text-lg'>Send it</h2>
         </Link>
         <ul className='flex items-center gap-6'> {/* user here is refer to prisma schema with USER */}
             {!session?.user && <Login/>} 

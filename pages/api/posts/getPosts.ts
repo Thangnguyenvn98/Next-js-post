@@ -13,7 +13,7 @@ export default async function handler(
         
         // Fetch all posts
         try {
-            const result = await prisma.post.findMany({
+            const result = await prisma.post.findMany({  //displaying every user posts that why findMany
                 include: {
                     user: true,
                     Comment: true
