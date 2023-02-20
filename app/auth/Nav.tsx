@@ -11,7 +11,7 @@ export default async function Nav(){
     <nav className='flex justify-between items-center py-8'>
         <Link href={'/'}>
             <div className='flex flex-row items-center gap-2'>
-        <h2 className = 'font-bold text-lg'>PostUrMind 
+        <h2 className = 'font-bold text-lg'>PostUrThought
 </h2>
 <ChatBubbleLeftIcon className="h-6 w-6" />
 </div>
