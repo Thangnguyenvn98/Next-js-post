@@ -3,10 +3,11 @@
 import Image from "next/image"
 import { useState } from "react"
 import Toggle from "./Toggle"
-import Post from '../components/Post';
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import EditingAPost from "../components/EditingAPost";
+import Link from "next/link";
 
 
 type EditProps = {
@@ -24,6 +25,10 @@ type EditProps = {
 
 export default function EditPost({avatar,name,title,comments,id}: EditProps){
     const [toggle,setToggle] = useState(false)
+    const [toggleEdit, setToggleEdit] = useState(false)
+    
+
+
     let deleteToastID: string
     const queryClient = useQueryClient()
 
@@ -53,7 +58,13 @@ export default function EditPost({avatar,name,title,comments,id}: EditProps){
 
     return(
         <>
-        
+        {toggleEdit && <EditingAPost 
+            id={id} 
+            setToggleEdit= {setToggleEdit}
+            title={title}
+             // pass function to update post title
+            
+        />}
         <div className='bg-white my-8 p-8 rounded-lg'>
             <div className='flex  gap-2 items-center'>
                 <Image src={avatar} width={32} height={32} alt={'avatar'}/>
@@ -61,14 +72,24 @@ export default function EditPost({avatar,name,title,comments,id}: EditProps){
             
             </div>
             <div className='my-8'>
-            <p className='break-words'>{title}</p>
+                <p className='break-words'>{title}</p>
             </div>
             <div className="flex items-center justify-between gap-4">
+                <Link href={`/post/${id}`}>
                 <p className='text-sm font-bold text-gray-700'>{comments?.length} Comments</p>
-                <button onClick={(e)=>setToggle(true)}className='rounded-lg bg-red-500 text-white text-sm py-2 px-6'>Delete</button>
+                </Link>
+                <div className="flex gap-4 cursor-pointer items-center">
+                
+                <button className='rounded-lg bg-sky-400 text-white text-sm py-2 px-6 ' onClick={(e)=> setToggleEdit(true)} >Edit Post</button>
+                
+                </div> 
+                
+                <button onClick={(e)=> setToggle(true)} className='rounded-lg bg-red-500 text-white text-sm py-2 px-6'>Delete</button>
             </div>
         </div>
+        
         {toggle && <Toggle deletePost={deletePost} setToggle={setToggle}/>}
+        
         </>
     )
 }

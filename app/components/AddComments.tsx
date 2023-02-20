@@ -21,9 +21,9 @@ export default function AddComment({id}: PostProps){
     const queryClient = useQueryClient()
 
     let commentToastId : string
-
+    //Adding Comment to a Post
     const {mutate} = useMutation(
-        async(data: PostComment) => axios.post('/api/posts/addComment',{data}),
+        async(data: PostComment) => await axios.post('/api/posts/addComment',{data}),
         {
             onSuccess: data => {
                 setTitle('')

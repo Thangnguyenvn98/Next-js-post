@@ -6,6 +6,7 @@ import axios from 'axios'
 import AddComment from "@/app/components/AddComments"
 import Image from "next/image"
 
+
 type URL = {
     params: {
         slug: string
@@ -20,7 +21,11 @@ const fetchDetails = async (slug: string) => {
 
 
 export default function PostDetail(url: URL){
+    
+      
+
     const {data, isLoading} = useQuery({queryKey: ['detail-post'], queryFn: () => fetchDetails(url.params.slug)})
+  
 
     if (isLoading) return "Loading ..."
     console.log(data)
