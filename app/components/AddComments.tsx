@@ -53,7 +53,7 @@ export default function AddComment({id}: PostProps){
         <form className='my-8' onSubmit={submitComment}>
             <h3>Add a comment</h3>
             <div className= 'flex flex-col my-2'>
-            <input type="text" name='title' value={title} onChange={(e)=> setTitle(e.target.value)} className='p-4 text-lg rounded-md my-2' />
+            <input type="text" name='title' value={title} onChange={(e)=> setTitle(e.target.value)} className='p-4 text-lg rounded-md my-2 text-black' />
              </div>
              <div className='flex items-center justify-between gap-2'>
                 <p className={`font-bold text-sm ${title.length > 300 ? "text-red-700":"text-gray-700"}`}>{`${title.length}/300`}</p>

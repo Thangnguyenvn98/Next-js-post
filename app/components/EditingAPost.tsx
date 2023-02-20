@@ -73,7 +73,7 @@ export default function EditingAPost({id,title, setToggleEdit}: EditAPostProps){
                 <textarea
             
             name="title"
-            className='p-4 text-lg rounded-md my-2 bg-gray-200 w-full '
+            className='p-4 text-lg rounded-md my-2 bg-gray-200 w-full text-black '
             value={titleInput}
             onChange={(e) => setTitleInput(e.target.value)}
             onClick={(e)=> e.stopPropagation()}

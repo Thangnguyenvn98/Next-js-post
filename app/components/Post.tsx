@@ -32,7 +32,7 @@ export default function Post({avatar,name, postTitle, id, comments}: PostProps){
 
             </div>
             <div className="my-8">
-                <p className="break-all">{postTitle}</p>
+                <p className="break-all text-black">{postTitle}</p>
             </div>
             <div className="flex gap-4 cursor-pointer items-center">
                 <Link href={`/post/${id}`}>
