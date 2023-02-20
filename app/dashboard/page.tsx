@@ -10,7 +10,9 @@ export default async function Dashboard(){
     }
     return(
         <main>
-            <h1 className="text-2xl font-bold">Welcome back {session?.user?.name} !</h1>
+            <div className='flex gap-2'>
+            <h1 className="text-2xl font-bold text-gray-600">Welcome back {session?.user?.name} !</h1>
+            </div>
             <MyPosts/>
         </main>
     )

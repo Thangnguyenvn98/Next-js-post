@@ -72,7 +72,7 @@ export default function EditPost({avatar,name,title,comments,id}: EditProps){
             
             </div>
             <div className='my-8'>
-                <p className='break-words'>{title}</p>
+                <p className='break-words text-black'>{title}</p>
             </div>
             <div className="flex items-center justify-between gap-4">
                 <Link href={`/post/${id}`}>

@@ -39,8 +39,8 @@ export default function PostDetail(url: URL){
                     <div key={comment.id} className="my-6 bg-white p-8">
                             <div className="flex items-center gap-2">
                                 <Image src={comment.user?.image} width={24} height={24} alt='avatar'/>
-                                <h3 className='font-bold'>{comment.user?.name}</h3>
-                                <h2 className='text-sm'>{comment.createdAt}</h2>
+                                <h3 className='font-bold text-gray-700'>{comment.user?.name}</h3>
+                                <h2 className='text-sm text-black'>{comment.createdAt}</h2>
                             </div>
                             <div className="py-4 text-black">{comment.message}</div>
                     </div>
