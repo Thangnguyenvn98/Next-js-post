@@ -107,9 +107,9 @@ The project has the following directory structure:
 
 ## Deployment
 
-This project was deploy using the Vercel Platform from the creators of Next.js.
+This project was deployed on Vercel Platform from the creators of Next.js.
 
-Check out Next.js deployment [Google](https://google.com)documentation for more details.
+Check out Next.js [deployment documentation](https://vercel.com/docs/concepts/deployments/overview) for more details.
 
 ## Features
 
