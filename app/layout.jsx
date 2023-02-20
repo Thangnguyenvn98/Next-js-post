@@ -20,8 +20,8 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`mx-4 md:mx-48 lg:mx-96 ${roboto.variable} bg-gray-200`}>
-        <QueryWrapper>
+      <body className={`mx-4 md:mx-48 lg:mx-96 ${roboto.variable} font-sans bg-gray-300`}>
+        <QueryWrapper >
         <Nav/>
         
         {children}

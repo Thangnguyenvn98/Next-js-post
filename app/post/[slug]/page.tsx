@@ -5,13 +5,15 @@ import { useQuery } from "@tanstack/react-query"
 import axios from 'axios'
 import AddComment from "@/app/components/AddComments"
 import Image from "next/image"
-
+import { CommentType} from "@/app/types/PostType"
 
 type URL = {
     params: {
         slug: string
     }
 }
+
+
 
 
 const fetchDetails = async (slug: string) => {
@@ -28,13 +30,12 @@ export default function PostDetail(url: URL){
   
 
     if (isLoading) return "Loading ..."
-    console.log(data)
     return (
         <div>
             <Post id={data.id} name={data.user.name} avatar={data.user.image} postTitle={data.title} comments={data.Comment}/>
             <AddComment id={data?.id}/>
             {
-                data?.Comment?.map((comment)=>(
+                data?.Comment?.map((comment: CommentType)=>(
                     <div key={comment.id} className="my-6 bg-white p-8">
                             <div className="flex items-center gap-2">
                                 <Image src={comment.user?.image} width={24} height={24} alt='avatar'/>

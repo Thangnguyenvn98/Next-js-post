@@ -41,7 +41,7 @@ export default function Home() {
  
   return (
     <>
-    <main >
+    <main  >
       <div className='flex gap-3 items-center justify-center'>
             <input className="p-3 w-full my-5  border-white text-xs  border-opacity-100 rounded-md" type="text" placeholder="Search for keywords" value={searchValue} onChange={(e)=>setSearchValue(e.target.value)}/>
             <MagnifyingGlassIcon className="w-20 h-10 shadow-sm p-3 bg-gray-600 rounded-lg text-white" onClick={handleSearchClick}/>
