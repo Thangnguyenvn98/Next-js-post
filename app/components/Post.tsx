@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-
+import photo from '../assets/empty-photo-male-profile-gray-600w-538707310.webp'
 
 interface Comment {
     createdAt?: string;
@@ -12,7 +12,7 @@ interface Comment {
     message: string;
   }
 interface PostProps {
-    avatar: string;
+    avatar?: string;
     name?: string;
     postTitle: string;
     id: string;
@@ -25,7 +25,7 @@ export default function Post({avatar,name, postTitle, id, comments}: PostProps){
     return(
         <div className="bg-white my-8 p-8 rounded-lg ">
             <div className="flex items-center gap-2">
-                <Image className = 'rounded-full' width={32} height = {32} src={avatar} alt='avatar'
+                <Image className = 'rounded-full' width={32} height = {32} src={avatar||photo} alt='avatar'
                 
                 />
             <h3 className="font-bold text-gray-700">{name}</h3>
